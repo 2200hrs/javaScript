@@ -1,0 +1,51 @@
+                 <!-- DataTales Example -->
+                 <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Checked In Students</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Room Number</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% if(checkedin.length>0) {%>
+                                        <% checkedin.forEach(data=>{ %> 
+                        
+                                            <tr>
+                                                <td><%= data.email %></td>
+                                                <td><%= data.id %></td>
+                                                <td><%= data.hostel %></td>
+                                                <td>
+
+                                                    <form action="/checkout/<%= data.id%>" method="post">
+
+                                                        <button>Check Out</button>
+                                                    </form>
+
+
+                                                </td>
+
+                                            </tr>                
+                        
+                                       <% })%>
+                        
+                                       <%}%>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+ 

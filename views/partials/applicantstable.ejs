@@ -1,0 +1,107 @@
+
+<div  class="tables">
+
+    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Male Applicants</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+               <form action="/allocatemale" method="post">
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Semester</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(maleapplicants.length>0){ %>
+
+                            <% maleapplicants.forEach(data=>{ %>
+
+                                <tr>
+                                    <td><%= data.email %></td>
+                                    <td><%= data.semester %></td>
+                                    <td><%= data.points %></td>
+                                </tr>
+   
+                          <%})%>
+
+
+                        <%}%>
+
+                    </tbody>
+                </table>
+                <input placeholder="Number of Males" type="text" name="malelimit" required>
+                <input value="Allocate Male" type="submit"> 
+               </form>
+
+                <br>
+
+
+                <form action="/allocatefemale" method="post">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <h6 class="m-0 font-weight-bold text-primary">Female Applicants</h6>
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Semester</th>
+                                <th>Points</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(femaleapplicants.length>0){ %>
+            
+                                <% femaleapplicants.forEach(data=>{ %>
+            
+                                    <tr>
+                                        <td><%= data.email %></td>
+                                        <td><%= data.semester %></td>
+                                        <td><%= data.points %></td>
+        
+                                    </tr>
+            
+                              <%})%>
+            
+            
+                            <%}%>
+            
+                        </tbody>
+    
+    
+          
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <!-- /.container-fluid -->
+    
+    </div>
+    
+    
+    
+    </table>
+    <input placeholder="Number of Females" type="text" name="femalelimit" required>
+    <input  value="Allocate Female" type="submit"> 
+   
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+    </div>
+
+
+
+                </form>
+        
+              
+
